@@ -7,7 +7,7 @@ namespace CarDealership.Models
     public string MakeModel {get; set;}
     public int Price { get; set; }
     public int Miles { get; set; }
-    private static List<Car> _cars = new List<Item> {};
+    private static List<Car> _cars = new List<Car> {};
 
     public Car(string makeModel, int price, int miles)
     {
@@ -41,7 +41,7 @@ namespace CarDealership.Models
 
     public bool WorthBuying(int maxPrice)
     {
-      return (_price < maxPrice);
+      return (Price < maxPrice);
     }
 
     public static string MakeSound(string sound)

@@ -13,14 +13,18 @@
       {
         <p>There are no items in the list</p>
       }
-      <ul>
+      <ol>
         @foreach (Car car in Model)
         {
-          <li>Model: @car.MakeModel</li>
-          <li>Miles: @car.Miles</li>
-          <li>Price: @car.Price</li>
+          <li>
+            Model: @car.MakeModel<br>
+            Miles: @car.Miles<br>
+            Price: @car.Price
+          </li>
         }
-      </ul>  
+      </ol>
+      <a href="/cars">See available cars</a>
+      <a href="/cars/new">Create new listing</a>  
     </div>
   </body>  
 </html>    

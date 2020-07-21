@@ -9,7 +9,7 @@ namespace CarsDealership.Controllers
     [HttpGet("/cars")]
     public ActionResult Index()
     {
-      List<Car> cars = new List<Car>;
+      List<Car> cars = Car.GetAll();
       return View(cars);
     }
 

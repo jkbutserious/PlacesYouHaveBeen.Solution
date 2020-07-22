@@ -17,5 +17,10 @@ namespace Vacation.Models
       Id = _instances.Count;
       Destinations  = new List<Trip>{};
     }
+    public static void ClearAll()
+    {
+      _instances.Clear();
+    }
+
   }
 }

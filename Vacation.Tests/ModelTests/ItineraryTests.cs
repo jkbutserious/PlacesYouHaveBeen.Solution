@@ -6,8 +6,13 @@ using System;
 namespace Vacation.Tests
 {
   [TestClass]
-  public class Vacations
+  public class ItineraryTests : IDisposable
   {
+
+    public void Dispose()
+    {
+      Itinerary.ClearAll();
+    }
     [TestMethod]
     public void GetName_ReturnsName_String()
     {
@@ -20,6 +25,19 @@ namespace Vacation.Tests
 
       //Assert
       Assert.AreEqual(name, result);
+    }
+    [TestMethod]
+    public void GetId_ReturnsCategoryId_Int()
+    {
+      //Arrange
+      string name = "Test Itinerary";
+      Itinerary newItinerary = new Itinerary(name);
+
+      //Act
+      int result = newItinerary.Id;
+
+      //Assert
+      Assert.AreEqual(1, result);
     }
 
   }

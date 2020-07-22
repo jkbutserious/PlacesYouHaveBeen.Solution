@@ -6,7 +6,7 @@ using System;
 namespace Vacation.Tests
 {
   [TestClass]
-  public class Vacations
+  public class TripTests
   {
     [TestMethod]
   public void GetId_ItemsInstantiateWithAnIdAndGetterReturns_Int()

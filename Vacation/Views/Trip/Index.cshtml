@@ -7,24 +7,24 @@
   </head>
   <body>
     <div class="container">
-      @using CarDealership.Models;
+      @using Vacation.Models
       <h1>Available Cars:</h1>
       @if (Model.Count == 0)
       {
         <p>There are no items in the list</p>
       }
       <ol>
-        @foreach (Car car in Model)
+        @foreach (Trip trip in Model)
         {
           <li>
-            Model: @car.MakeModel<br>
-            Miles: @car.Miles<br>
-            Price: @car.Price
+            Model: @trip.City<br>
+            Miles: @trip.Date<br>
+            Price: @trip.Rating
           </li>
         }
       </ol>
-      <a href="/cars">See available cars</a>
-      <a href="/cars/new">Create new listing</a>  
+      <a href="/trips">See available cars</a>
+      <a href="/trips/new">Create new listing</a>  
     </div>
   </body>  
 </html>    

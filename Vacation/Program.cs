@@ -1,9 +1,9 @@
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
 
-namespace CarDealership
+namespace Vacations
 {
-  public class Program
+  public class Startup
   {
     public static void Main(string[] args)
     {

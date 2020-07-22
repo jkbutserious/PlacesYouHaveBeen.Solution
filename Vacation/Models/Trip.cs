@@ -18,8 +18,6 @@ namespace Vacation.Models
       _trips.Add(this);
       Id = _trips.Count;
 
-      _trips.Add(this);
-
     }
 
     // public bool WorthBuying(int maxPrice)
@@ -40,6 +38,11 @@ namespace Vacation.Models
     public static void ClearAll()
     {
       _trips.Clear();
+    }
+
+    public static Trip Find(int searchId)
+    {
+      return _trips[searchId -1 ];
     }
   }
 }

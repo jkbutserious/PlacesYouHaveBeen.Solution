@@ -31,6 +31,11 @@ namespace Vacation.Controllers
       Trip.ClearAll();
       return View();
     }
-
+    [HttpGet("/trips/{id}")]
+    public ActionResult Show(int id)
+    {
+      Trip foundTrip = Trip.Find(id);
+      return View(foundTrip);
+    }
   }
 }

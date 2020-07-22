@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <title>Trip Listing</title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+  </head>
+  <body>
+    <h1>To Do List Item Details: </h1>
+    @using Vacation.Models
+    <h2>@Model.City</h2>
+    <ul>
+      <li>
+        Date: @Model.Date<br>
+        Rating: @Model.Rating<br>
+      </li>
+    </ul>
+    <a href='/trips/new'>Add another item</a>
+    <a href='/trips'>View all items</a>
+  </body>
+</html>    

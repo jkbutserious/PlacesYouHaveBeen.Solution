@@ -17,7 +17,6 @@ namespace Vacation.Models
       Rating = rating;
       _trips.Add(this);
       Id = _trips.Count;
-
     }
 
     // public bool WorthBuying(int maxPrice)

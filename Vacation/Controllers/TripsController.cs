@@ -25,5 +25,12 @@ namespace Vacation.Controllers
       Trip myTrip = new Trip(city, date, rating);
       return RedirectToAction("Index");
     }
+    [HttpPost("/trips/delete")]
+    public ActionResult DeleteAll()
+    {
+      Trip.ClearAll();
+      return View();
+    }
+
   }
 }

@@ -8,23 +8,27 @@
   <body>
     <div class="container">
       @using Vacation.Models
-      <h1>Available Cars:</h1>
+      <h1>Places Visited on This Trip</h1>
       @if (Model.Count == 0)
       {
-        <p>There are no items in the list</p>
+        <p>There are No Travels Logged</p>
       }
       <ol>
         @foreach (Trip trip in Model)
         {
           <li>
-            Model: @trip.City<br>
-            Miles: @trip.Date<br>
-            Price: @trip.Rating
+            City: @trip.City<br>
+            Date: @trip.Date<br>
+            Rating: @trip.Rating
           </li>
         }
       </ol>
-      <a href="/trips">See available cars</a>
-      <a href="/trips/new">Create new listing</a>  
+      <a href="/trips">See Past Travels</a>
+      <a href="/trips/new">Log new Travel</a>  
+
+      <form action="/trips/delete" method="post">
+        <button type="submit" name="button">Clear All Items</button>
+      </form>
     </div>
   </body>  
 </html>    

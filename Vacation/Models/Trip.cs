@@ -7,13 +7,16 @@ namespace Vacation.Models
     public string City {get; set;}
     public int Date { get; set; }
     public int Rating { get; set; }
+    public int Id { get; }
     private static List<Trip> _trips = new List<Trip> {};
 
-    public Trip(string City, int date, int rating)
+    public Trip(string city, int date, int rating)
     {
-      City = City;
+      City = city;
       Date = date;
       Rating = rating;
+      _trips.Add(this);
+      Id = _trips.Count;
 
       _trips.Add(this);
 
@@ -32,6 +35,11 @@ namespace Vacation.Models
     public static List<Trip> GetAll()
     {
       return _trips;
+    }
+
+    public static void ClearAll()
+    {
+      _trips.Clear();
     }
   }
 }

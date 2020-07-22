@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 
 namespace Vacations
 {
-  public class Startup
+  public class Program
   {
     public static void Main(string[] args)
     {

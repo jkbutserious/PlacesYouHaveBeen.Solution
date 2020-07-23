@@ -1,0 +1,14 @@
+@using Vacation.Models;
+
+<h3>Here are all the trips in this Itinerary:</h3>
+
+<ol>
+@foreach (Trip trip in @Model["trips"])
+{
+  <li><a href='/itineraries/@Model["itinerary"].Id/trips/@trip.Id'>@trip.City</a></li>
+}
+</ol>
+
+<p><a href='/itineraries/@Model["itinerary"].Id/trips/new'>Add a new trip</a></p>
+<p><a href='/itineraries'>Return to Itinerary list</a></p>
+<p><a href='/'>Return to Main Page</a></p>

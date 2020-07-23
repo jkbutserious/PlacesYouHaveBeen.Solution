@@ -15,11 +15,26 @@ namespace Vacation.Models
       Name = name;
       _instances.Add(this);
       Id = _instances.Count;
-      Destinations  = new List<Trip>{};
+      Destinations = new List<Trip>{};
     }
     public static void ClearAll()
     {
       _instances.Clear();
+    }
+
+    public static List<Itinerary> GetAll()
+    {
+      return _instances;
+    }  
+
+    public static Itinerary Find(int searchId)
+    {
+      return _instances[searchId-1];
+    }
+
+    public void AddTrip(Trip trip)
+    {
+      Destinations.Add(trip);
     }
 
   }

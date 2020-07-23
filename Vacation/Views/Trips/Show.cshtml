@@ -8,10 +8,12 @@
   <body>
     <h1>Trip Details: </h1>
 
-<h2>@Model["trip"].Date</h2>
-<h2>@Model["trip"].Rating</h2>
-<h2>@Model["trip"].City</h2>
-<h3>Category: @Model["category"].Name</h3>
+    <h2>@Model["trip"].Date</h2>
+    <h2>@Model["trip"].Rating</h2>
+    <h2>@Model["trip"].City</h2>
+    <h3>Itinerary: @Model["itinerary"].Name</h3>
 
-<a href='/itineraries/@Model["itinerary"].Id/trips/new'>Add another item</a>
-<a href='/itineraries'>View all itineraries</a>
+    <a href='/itineraries/@Model["itinerary"].Id/trips/new'>Add another item</a>
+    <a href='/itineraries'>View all itineraries</a>
+  </body>
+</html>    

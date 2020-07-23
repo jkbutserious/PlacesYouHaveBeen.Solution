@@ -8,7 +8,7 @@
   <body>
     <h1>Fill in the information below to add a new trip to @Model.Name:</h1>
     <form action="/itineraries/@Model.Id/trips" method="post">
-      <input id="itineraryId" name="itineraryId" type="hidden" value="@Model.Id">
+      <input id="id" name="id" type="hidden" value="@Model.Id">
       <label for="city">City:</label>
       <input id="city" name="city" type="text">
       <label for="date">Date:</label>

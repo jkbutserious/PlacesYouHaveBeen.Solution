@@ -13,7 +13,7 @@ namespace Vacation.Controllers
       return View(trips);
     }
 
-    [HttpGet("/itineraries/{itineraryId}/trips/new"")]
+    [HttpGet("/itineraries/{itineraryId}/trips/new")]
     public ActionResult New(int itineraryId)
     {
       Itinerary itinerary = Itinerary.Find(itineraryId);

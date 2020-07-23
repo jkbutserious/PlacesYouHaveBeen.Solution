@@ -12,6 +12,7 @@ namespace Vacation.Tests
     public void Dispose()
     {
       Itinerary.ClearAll();
+      Trip.ClearAll();
     }
     [TestMethod]
     public void GetName_ReturnsName_String()
@@ -40,7 +41,7 @@ namespace Vacation.Tests
       Assert.AreEqual(1, result);
     }
 
-     [TestMethod]
+    [TestMethod]
     public void GetAll_ReturnsAllItineraryObjects_ItineraryList()
     {
       //Arrange
@@ -80,11 +81,11 @@ namespace Vacation.Tests
     string city = "Portland";
     int date = 1;
     int rating = 1;
-    Trip newTrip = new Trip(city, date, rating);
-    List<Trip> newList = new List<Trip> { newTrip };
+    Trip newTrip3 = new Trip(city, date, rating);
+    List<Trip> newList = new List<Trip> { newTrip3 };
     string name = "Oregon";
     Itinerary newItinerary = new Itinerary(name);
-    newItinerary.AddTrip(newTrip);
+    newItinerary.AddTrip(newTrip3);
 
     //Act
     List<Trip> result = newItinerary.Destinations;

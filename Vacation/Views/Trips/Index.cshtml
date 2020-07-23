@@ -17,7 +17,9 @@
         @foreach (Trip trip in Model)
         {
           <li>
-            City:<a href='/trips/@trip.Id'>@trip.City</a><br>
+            <a>City:@trip.City</a><br>
+            <a>Date:@trip.Date</a><br>
+            <a>Rating:@trip.Rating</a><br>
           </li>
         }
       </ol>

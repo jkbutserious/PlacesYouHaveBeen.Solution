@@ -6,8 +6,9 @@
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
   </head>
   <body>
-    <h1>Fill in the information below to create your listing:</h1>
-    <form action="/trips" method="post">
+    <h1>Fill in the information below to add a new trip to @Model.Name:</h1>
+    <form action="/itineraries/@Model.Id/trips" method="post">
+      <input id="itineraryId" name="itineraryId" type="hidden" value="@Model.Id">
       <label for="city">City:</label>
       <input id="city" name="city" type="text">
       <label for="date">Date:</label>

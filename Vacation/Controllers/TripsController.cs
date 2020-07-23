@@ -13,10 +13,11 @@ namespace Vacation.Controllers
       return View(trips);
     }
 
-    [HttpGet("/trips/new")]
-    public ActionResult New()
+    [HttpGet("/itineraries/{itineraryId}/trips/new"")]
+    public ActionResult New(int itineraryId)
     {
-      return View();
+      Itinerary itinerary = Itinerary.Find(itineraryId);
+      return View(itinerary);
     }
 
     [HttpPost("/trips")]
@@ -25,17 +26,30 @@ namespace Vacation.Controllers
       Trip myTrip = new Trip(city, date, rating);
       return RedirectToAction("Index");
     }
+
     [HttpPost("/trips/delete")]
     public ActionResult DeleteAll()
     {
       Trip.ClearAll();
       return View();
     }
+
     [HttpGet("/trips/{id}")]
     public ActionResult Show(int id)
     {
       Trip foundTrip = Trip.Find(id);
       return View(foundTrip);
     }
+
+    [HttpGet("/itineraries/{itineraryId}/trips/{tripId}")]
+    public ActionResult Show(int itineraryId, int tripId)
+  {
+    Trip trip = Trip.Find(tripId);
+    Itinerary itinerary = Itinerary.Find(itineraryId);
+    Dictionary<string, object> model = new Dictionary<string, object>();
+    model.Add("trip", trip);
+    model.Add("itinerary", itinerary);
+    return View(model);
+  }
   }
 }

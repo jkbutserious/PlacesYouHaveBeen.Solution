@@ -82,11 +82,16 @@ namespace Vacation.Tests
     int date = 1;
     int rating = 1;
     Trip newTrip3 = new Trip(city, date, rating);
-    List<Trip> newList = new List<Trip> { newTrip3 };
+    string city1 = "Portland";
+    int date1 = 1;
+    int rating1 = 1;
+    Trip newTrip4 = new Trip(city1, date1, rating1);
+    List<Trip> newList = new List<Trip> { newTrip3, newTrip4 };
     string name = "Oregon";
     Itinerary newItinerary = new Itinerary(name);
     newItinerary.AddTrip(newTrip3);
-
+    // Console.WriteLine(newItinerary.Destinations);
+    
     //Act
     List<Trip> result = newItinerary.Destinations;
 
